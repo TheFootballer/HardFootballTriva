@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Football Quiz Game</h1>
+    
+    <div id="difficulty-selection">
+        <h2>Select Difficulty</h2>
+        <button onclick="startGame('easy')">Easy</button>
+        <button onclick="startGame('medium')">Medium</button>
+        <button onclick="startGame('hard')">Hard</button>
+        <button onclick="startGame('impossible')">Impossible</button>
+    </div>
+
+    <div id="quiz-container" style="display: none;">
+        <h2 id="question"></h2>
+        <div id="options"></div>
+        <div id="feedback"></div>
+        <div id="score">Score: 0</div>
+        <div id="timer">Time Left: <span id="time-remaining">15</span> seconds</div>
+        <button id="skip-btn" onclick="skipQuestion()" style="display: none;">Skip Question</button>
+        <button id="fifty-fifty-btn" onclick="fiftyFifty()" style="display: none;">50/50</button>
+        <button id="hint-btn" onclick="giveHint()" style="display: none;">Hint</button>
+        <button id="add-question-btn" onclick="showAddQuestionForm()">Add Your Own Question</button>
+    </div>
+
+    <div id="end-container" style="display: none;">
+        <h2>Game Over!</h2>
+        <h3 id="final-score"></h3>
+        <button onclick="restartGame()">Restart</button>
+        <button onclick="showLeaderboard()">View Leaderboard</button>
+        <div id="leaderboard" style="display: none;">
+            <h3>Leaderboard</h3>
+            <ul id="leaderboard-list"></ul>
+            <button onclick="hideLeaderboard()">Close</button>
+        </div>
+    </div>
+
+    <div id="question-review" style="display: none;">
+        <h3>Question Review</h3>
+        <div id="review-content"></div>
+        <button onclick="hideReview()">Close Review</button>
+    </div>
+
+    <div id="add-question-form" style="display: none;">
+        <h3>Add Your Own Question</h3>
+        <input type="text" id="new-question" placeholder="Enter your question">
+        <input type="text" id="new-option1" placeholder="Option 1">
+        <input type="text" id="new-option2" placeholder="Option 2">
+        <input type="text" id="new-option3" placeholder="Option 3">
+        <input type="text" id="new-option4" placeholder="Option 4">
+        <input type="text" id="new-answer" placeholder="Correct Answer">
+        <button onclick="submitQuestion()">Submit Question</button>
+        <button onclick="hideAddQuestionForm()">Cancel</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
